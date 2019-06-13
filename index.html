@@ -1,0 +1,65 @@
+  <!DOCTYPE  HTML > <!--Defintion des element  html5 -->
+<html>
+  <head>
+    <link href="style.css"  rel="StyleSheet" /><!--Ajouter  les fichier  css style sheet-->
+    <script type="text/javascript" >
+    function affichier()
+        {
+            var nom = document.getElementById("txtnom").value;
+            var prenom = document.getElementById("txtprenom").value;
+            var email = document.getElementById("txtemail").value;
+            var pass = document.getElementById("txtpas").value;
+            var s = document.getElementById("sville");
+            var Gender;
+            var ville;
+            if(document.getElementById("rdhome").checked)
+            {
+                Gender = document.getElementById("rdhome").value; 
+            }else
+            {
+                Gender = document.getElementById("rdfem").value;
+            }
+            
+            ville =  s.options[s.selectIndex].value;
+            document.getElementById("root").innerText = nom +"/" +prenom+"/"+email+"/"+pasa+"<br/>"+ville+"/"+Gender ;
+
+
+
+        }
+
+</script>
+</head>
+<body>
+    <center><h1>Ajouter des Personne</h1></center>
+    <form> <!--Definition l element form -->
+        <label>Email</label><!--Label Email c  texe d une label-->
+        <input  type="text" id="txtemail" placeholder="Email" /><!--l element input  ou textbox-->
+        <br/><!--Return a lign-->
+        nom <!-- par exemple de label   -->
+        <input type="text" placeholder="Nom" id="txtnom" /> <!--c textBox ou input de  type text et id txtnom-->
+        <br/>
+        <label>Prenom</label>
+        <input type="text" id="txtprenom" />
+        <br/><!--return a lign -->
+        <label>Password</label>
+        <input type="password"  id="txtpas"  />
+        <br/>
+        Gender
+        <br/><!--return a lign-->
+        <input type="radio" id="rdhome" value="Homme"  groupname="t" />Homme <!--input de typr radio c par exemple RadioButton et deferent de value-->
+        <br/>
+        <input type="radio"  id="rdfem" value="Femme" groupname="t" />Femme 
+        <br/>
+        Ville <select id="sville"><!--element select c est par example de Combobox -->
+            <option>Nador</option>
+            <option>Berkan</option>
+            <option>Houcima</option>
+            <option>Asafi</option>
+        </select>
+        <br/>
+        <button onclick="afficher();" id="btnadd">Ajouter</button>
+<br/>
+<p  class="Root" ></p>
+    </form>
+</body>
+</html>
